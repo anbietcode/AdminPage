@@ -4,10 +4,16 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
+import { Dashboard, Calendar, Topic, Stacked, Pyramid, Exercise, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, ExerciseSegment, LearnTogether, EnglishExpress } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
+import AddTopics from './pages/AddTopics';
+import AddExercise from './pages/AddExercise';
+import AddExerciseSegment from './pages/AddExerciseSegment';
+import AddLearnTogether from './pages/AddLearnTogether';
+import AddEnglishExpress from './pages/AddEnglishExpress';
+
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
@@ -65,17 +71,23 @@ const App = () => {
 
               <Routes>
                 {/* dashboard  */}
-                <Route path="/" element={(<Ecommerce />)} />
-                <Route path="/ecommerce" element={(<Ecommerce />)} />
+                <Route path="/" element={(<Dashboard />)} />
+                <Route path="/dashboard" element={(<Dashboard />)} />
 
                 {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                <Route path="/topic" element={<Topic />} />
+                <Route path="/addtopic" element={<AddTopics />} />
+                <Route path="/exercise" element={<Exercise />} />
+                <Route path="/addexercise" element={<AddExercise />} />
+                <Route path="/exercisesegment" element={<ExerciseSegment />} />
+                <Route path="/addexercisesegment" element={<AddExerciseSegment />} />
+                <Route path="/learntogether" element={<LearnTogether />} />
+                <Route path="/addlearntogether" element={<AddLearnTogether />} />
+                <Route path="/englishexpress" element={<EnglishExpress />} />
+                <Route path="/addenglishexpress" element={<AddEnglishExpress />} />
 
                 {/* apps  */}
                 <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
 
